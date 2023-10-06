@@ -19,11 +19,11 @@ def limit():
     return render_template('limitations.html')
 
 
-@app.route('/paraphrase', methods=['GET', 'POST'])
+@app.route('/paraphrase', methods=['GET','POST'])
 def paraphrase():
     if request.method == 'POST':
         original_text = request.form['original_text']
-        # Use AI model to summarize text
+        # Paraphrase Engine
         model_engine = "text-davinci-002"
         completions = openai.Completion.create(
             engine=model_engine,
