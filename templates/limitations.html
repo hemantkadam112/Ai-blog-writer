@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>AI Writer</title>
+</head>
+<body>
+
+<div class="container">
+    <aside class="menubar">
+
+        <h2 class="brand_name">Blog Writer</h2>
+
+        <nav class="navigation">
+
+            <div class="link_container">
+                <a href="/" class="link">Home</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/paraphrase" class="link">Paraphrase</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/summarize" class="link">Summarize</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/write_content" class="link">Generate</a>
+            </div>
+
+        </nav>
+
+        <nav class="secondary">
+            <div class="link_container">
+                <a href="/limitations" class="link">Limitations</a>
+            </div>
+
+            <span href="#" class="disabled">AI Version: 3.0</span>
+        </nav>
+
+
+    </aside>
+
+    <section class="main">
+        <div class="container_main">
+
+            <div class="inner-focus">
+                
+                <div class="main_child_limit">
+
+                    <div class="padding">
+
+                    <p class="child_text">
+                        <p class="limit__text">As a language model, here are some of the limitations of OpenAI APIs:<br></p><br>
+
+        <p class="limit">
+            1. <b>Data bias:</b><br> OpenAI APIs are trained on large datasets of human-generated text, which can lead to bias and inaccuracies in the AI-generated outputs.<br><br>
+            
+            2. <b>Contextual understanding:</b><br> While OpenAI APIs are capable of generating text that appears fluent and coherent, they may not always understand the full context of a given prompt or question. This can lead to outputs that are technically correct but do not fully address the user's needs.<br><br>
+            
+            3. <b>Lack of creativity:</b><br> While OpenAI APIs can generate a wide range of outputs, they are not capable of true creativity. They can generate text based on the patterns they've learned from their training data, but they do not have true agency or the ability to generate truly novel ideas.<br><br>
+            
+            4. <b>Limitations on certain types of data:</b><br> Some OpenAI APIs are specifically designed to work with certain types of data, such as text or images, and may not be suitable for use with other types of data.<br><br>
+            
+            5. <b>Computational resources:</b><br> OpenAI APIs require significant computational resources to run, which may limit their accessibility for some users or applications.<br><br>
+
+        </p>
+                    </p>
+                </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</div>
+    
+</body>
+</html>

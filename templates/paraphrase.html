@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>AI Writer</title>
+</head>
+<body>
+
+<div class="container">
+    <aside class="menubar">
+
+        <h2 class="brand_name">Blog Writer</h2>
+
+        <nav class="navigation">
+
+            <div class="link_container">
+                <a href="/" class="link">Home</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/paraphrase" class="link">Paraphrase</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/summarize" class="link">Summarize</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/write_content" class="link">Generate</a>
+            </div>
+
+        </nav>
+
+        <nav class="secondary">
+            <div class="link_container">
+                <a href="/limitations" class="link">Limitations</a>
+            </div>
+
+            <span href="#" class="disabled">AI Version: 3.0</span>
+        </nav>
+
+
+    </aside>
+
+    <section class="main">
+        <div class="container_main">
+
+            <div class="inner-focus">
+                
+                <div class="main_child_limit">
+
+                    <div class="padding">
+
+						<div class="container_para">
+							<h1>Paraphrase</h1>
+							<p>Use our AI Writer to paraphrase text quickly and accurately. Simply enter your original text below and let
+								our AI do the rest!</p><br>
+
+							<div class="form">
+							<form method="POST" action="{{ url_for('paraphrase') }}">
+								<span for="original_text">Original Text:</span><br>
+								<textarea id="original_text" name="original_text" class="textarea" rows="5" cols="50"></textarea><br>
+								<input type="submit" class="op_generate" value="Paraphrase">
+							</form>
+							</div>
+							{% if paraphrased_text %}
+							<h2>Paraphrased Text:</h2>
+							<p>{{ paraphrased_text }}</p>
+							{% endif %}
+						</div>
+                </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</div>
+    
+</body>
+</html>

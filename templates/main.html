@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>AI Writer</title>
+</head>
+<body>
+
+<div class="container">
+    <aside class="menubar">
+
+        <h2 class="brand_name">Blog Writer</h2>
+
+        <nav class="navigation">
+
+            <div class="link_container">
+                <a href="/" class="link">Home</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/paraphrase" class="link">Paraphrase</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/summarize" class="link">Summarize</a>
+            </div>
+
+            <div class="link_container">
+                <a href="/write_content" class="link">Generate</a>
+            </div>
+
+        </nav>
+
+        <nav class="secondary">
+            <div class="link_container">
+                <a href="/limitations" class="link">Limitations</a>
+            </div>
+
+            <span href="#" class="disabled">AI Version: 3.0</span>
+        </nav>
+
+
+    </aside>
+
+    <section class="main">
+        <div class="container_main">
+
+            <div class="inner-focus">
+                
+                <div class="main_child">
+
+                    <p class="child_text">
+                        Writing is easy. Writing <b>good content</b> isn't.<br>
+                        Let Blog Writer crush that blank page <br> so you can write quality content with less effort.
+                    </p>
+
+                </div>
+
+
+                <div class="main_child_ctc">
+
+                    <p class="child_text_ctc">
+                       Let <b>AI</b> create for you
+                    </p>
+
+                    <div class="button_ctc">
+                    <a href="/write_content" class="ctc_generate">Let's start writing</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</div>
+    
+</body>
+</html>
