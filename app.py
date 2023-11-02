@@ -3,7 +3,7 @@ import openai
 import os
 
 # Set up OpenAI API credentials
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 app = Flask(__name__)
@@ -44,11 +44,13 @@ def paraphrase():
 def summarize():
     if request.method == 'POST':
         original_text = request.form['original_text']
+        custom_input =""+original_text
+       
         # Use AI model to summarize text
         model_engine = "text-davinci-002"
         completions = openai.Completion.create(
             engine=model_engine,
-            prompt=original_text,
+            prompt=custom_input,
             max_tokens=100,
         )
 
@@ -65,23 +67,26 @@ def summarize():
 def write_content():
     if request.method == 'POST':
         topic = request.form['topic']
-        # Use AI model to generate new content based on topic
+        unique_prompt =(
+    "In your own words, describe a story about below topic . Please make it engaging and detailed, as if you are narrating it to a friend. Include emotions, sensory details, and any relevant background information. Be creative and feel free. The goal is to make it sound authentic and human-like. Take your time and craft the narrative thoughtfully.")
 
-        model_engine = "text-davinci-002"
+       # Create a custom prompt by combining topic and unique_prompt
+        custom_prompt = topic+unique_prompt
+
+        # Use the gpt-3.5-turbo-0613 engine to generate new content based on the custom prompt
+        model_engine = "text-davinci-003"  # Update the engine to gpt-3.5-turbo-0613
         completions = openai.Completion.create(
             engine=model_engine,
-            prompt=topic,
-            max_tokens=200,
+            prompt=custom_prompt,
+            max_tokens=100,
         )
 
         # Get the response
-        message = completions.choices[0].text.strip()
+        generated_content = completions.choices[0].text.strip()
 
-        generated_content = message
         return render_template('write_content.html', generated_content=generated_content)
     else:
         return render_template('write_content.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
